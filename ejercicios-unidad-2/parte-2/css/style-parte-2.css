@@ -1,0 +1,120 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin:0;
+    border:0;
+}
+
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
+    background-color: #b8faff;
+    max-width: 1024px;
+}
+
+.contenido > * {
+    margin-bottom: 1em;
+}
+
+.saludarAmigo > * { 
+    margin: 0px auto;
+}
+
+h1{
+    background-color:#fca469;
+    color:#093bdf;
+    border: 2px solid #B34900;
+    border-radius: 5px 5px 0 0;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+.formSaludo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 20rem;
+}
+
+.formSaludo > h2 {
+    background-color: rgb(231, 169, 169);
+    min-width: 100%;
+    color:blue;
+    text-align: center;
+}
+
+.formSaludo > *{
+    margin: 0.8em;
+}
+
+#resultadoEjSaludo{
+    border: 2px solid rgb(245, 243, 243);
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+}
+
+button {
+    background-color: rgb(245, 243, 243);
+    border: 2px solid rgb(69, 210, 253);
+    border-radius: 5px 5px;
+}
+
+.formSaludo, .loteriaPrimitiva {
+    background-color: #ffbb8e;
+    border-radius: 5px 5px;
+}
+
+.loteriaPrimitiva {
+    min-height: 8rem;
+}
+
+.loteriaPrimitiva > button {
+    margin: 1em;
+}
+
+.loteriaPrimitiva > h2{
+    background-color: rgb(231, 169, 169);
+    color:blue;
+    text-align: end;
+}
+
+#resultadoEjPrimitiva {
+    background-color: white;
+    max-width: 50%;
+}
+
+#resultadoEjSaludo, #resultadoEjPrimitiva {
+    min-width: 80%;
+    min-height: 1.8rem;
+}
+
+@font-face {
+    font-family: Dindalove;
+    src: url(../../../font/Dindalove.ttf);
+}
+
+.menuPrincipal {
+    color:black;
+    text-decoration: none;
+    padding: 0.5rem;
+    background-color: rgb(245, 243, 243);
+    border: 3px solid red;
+    border-radius: 5px 5px;
+}
+
+.menuPrincipal:active{
+    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.671);
+    background-color: rgb(150, 144, 144);
+}
+
+.contenido{
+    margin-top: 2rem;
+}
+

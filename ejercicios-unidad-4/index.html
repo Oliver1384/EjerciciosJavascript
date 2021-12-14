@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./js/ahorcado.js"></script>
+    <script type="text/javascript" src="./js/parking.js"></script>
+    <script type="text/javascript" src="./js/vectores.js"></script>
+    <script type="text/javascript" src="./js/validarCorreo.js"></script>
+    <link rel="icon" type="image/png" href="../img/icon.png"/>
+    <link rel="stylesheet" type="text/css" href="./css/unidad-4-style.css">
+    <title>Unidad 4</title>
+</head>
+<body>
+    <a href="../index.html" class="menuPrincipal">Inicio</a>
+    <h1>Unidad 4</h1>
+    <article id="articleAhorcado">
+        <h2>Juego del Ahorcado</h2>
+        <p>Dispondrá de un máximo de 6 fallos antes de perder.</p>
+        <div class="juegoAhorcado">
+            <form>
+                <div>
+                    <label for="palabraAdivinar">Introduzca una palabra</label>
+                    <input type="password" id="palabraAdivinar">
+                </div>
+                <div>
+                    <label for="letra">Intente adivinarla</label>
+                    <input type="text" id="letra"  maxlength="1" onkeyup="this.value = this.value.toUpperCase();">    
+                </div>
+                <button type="button" id="reiniciar">REINICIAR</button>
+                <div id="visualizarPalabra"></div>     
+                <p id="intentosLetras"></p>
+                <p id="letrasUtilizadas"></p>
+            </form>
+            <div>
+                <canvas id="myCanvas" width="400" height="400"></canvas>
+            </div>
+        </div>
+</article>
+
+<article id="aparcamiento">
+    <form>
+        <h2>Parking EL RINCÓN</h2>
+        <h3>Horarios</h3>
+        <div class="horarios">
+            <div>
+                <label for="fechaEntrada">Entrada: </label>
+                <input type="datetime-local" id="fechaEntrada">
+            </div>
+            <div>
+                <p>Salida:</p>
+                <p id="salidaParking">dd/mm/aaaa hh:mm</p>
+            </div>
+        </div>
+
+        <h3>Precio</h3>
+        <div class="precio">
+            <p>Precio:</p>
+            <p id="costeTotalParking">0 eur</p>
+        </div>
+        <div class="botonesParking">
+            <button id="precioAparcamiento" type="button">PRECIO</button>
+            <button id="reiniciarAparcamiento" type="button">REINICIAR</button>
+        </div>
+    </form>
+</article>
+
+<article id="vectores">
+    <h2>Trabajar con arrays</h2>
+    <form>
+        <button id="botonVerVector" type="button">VER VECTOR</button>
+        <button id="botonOrdenarVector" type="button">ORDENAR VECTOR</button>
+        <button id="botonInvertirVector" type="button">VERTOR AL REVÉS</button>
+        <label for="textoVectores">   </label>
+        <textarea id="textoVectores"></textarea>
+    </form>
+    <div class="resultadoVectores"></div>
+</article>
+
+<article class="validarCorreo">
+    <h2>Validar correo electrónico</h2>
+    <form>
+        <div>
+            <label for="correoInput">Correo</label>
+            <input type="email" id="correoInput">
+        </div>
+
+        <button type="button" class="botonValidarCorreo">Validar</button>
+    </form>
+    <div class="resultadoValidarCorreo"></div>
+</article>
+
+</body>
+</html>

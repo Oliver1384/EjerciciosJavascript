@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../img/icon.png"/>
+    <title>Unidad 2</title>
+</head>
+<body>
+    <style>
+        body{
+            max-width: 1024px;
+            background-color: #b8faff;
+        }
+        #result{
+            display: flex;
+            flex-direction: column;
+            max-width: 15rem;
+            position: fixed;
+            transform: translateX(200%);
+            background-color: rgb(219, 253, 219);
+            padding: 1rem;
+            border: 2px solid green;
+        }
+
+        #ejercicios{
+            display: flex;
+            flex-direction: column;
+            max-width: 20rem;
+        }
+
+        #result > *{
+            margin-bottom: 0.8rem;
+        }
+
+        h1.descripcion {
+            display: flex;
+            justify-content: center;
+            background-color:#fca469;
+            color:#093bdf;
+            border: 2px solid #B34900;
+            border-radius: 5px 5px 0px 0px;
+        }
+
+        .menuPrincipal {
+            color:black;
+            text-decoration: none;
+            padding: 0.5rem;
+            background-color: rgb(245, 243, 243);
+            border: 3px solid red;
+            border-radius: 5px 5px;
+        }
+
+       .menuPrincipal:active{
+            box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.671);
+            background-color: rgb(150, 144, 144);
+        }
+    </style>
+
+    <h1 class="descripcion">1º parte, ejercicios de unidad 2</h1>
+    <a href="../../index.html" class="menuPrincipal">Inicio</a>
+    <div id="result">
+        <h2>Resultados de inputs</h2>
+    </div>
+    <div id="ejercicios"></div>
+ 
+    <script>
+        /*Código común para todos los scripts*/
+        function init(){
+            var sendNumbers = document.getElementById('sendNumbers');
+            sendNumbers.addEventListener('click', calcularMayor);
+            var sendText = document.getElementById('sendText');
+            sendText.addEventListener('click', escribirFrase);
+            var countButton = document.getElementById('sendCount');
+            countButton.addEventListener('click', contador);
+            var countButtonW = document.getElementById('sendCountW');
+            countButtonW.addEventListener('click', contadorW);
+        }
+        document.addEventListener("DOMContentLoaded", init);
+        var divResult = document.getElementById('result');
+        var divEjercicios = document.getElementById('ejercicios');
+
+    
+
+        /**
+        * Elimina todos los hijos del elemento pasado por parámetro
+        */
+        function removeAllChilds(element) {
+            while (element.firstChild) {
+                    element.removeChild(element.firstChild);
+            }
+            element.innerHTML += `<h2>Resultados de inputs</h2>`;
+        }
+
+    </script>
+
+    <script>
+        
+        /*Ejercicio 1: Realiza una página en la que crees dos variables
+         “string”, las “sumes” e imprimas el resultado.*/
+        divEjercicios.innerHTML += `<h2>Ejercicio 1</h2>`;
+        var stringOne = 'hello';
+        var stringTwo = 'world!';
+        var text = document.createTextNode(stringOne+' '+stringTwo);
+        divEjercicios.appendChild(text);
+    </script>
+
+    <script>
+        /*Ejercicio 2: La función typeof() devuelve el tipo de una variable.
+        Hacer un script que te diga el tipo de un par de variables, sin
+        inicializarlas y posteriormente con un valor (string, number y boolean).*/
+        divEjercicios.innerHTML += `<h2>Ejercicio 2</h2>`;
+        var valueOne;
+        var valueTwo;
+        var texto = document.createTextNode(typeof(valueOne)+'\n'+(typeof(valueTwo)));
+        divEjercicios.appendChild(texto);
+        valueOne = 'hello';
+        valueTwo = 20;
+        texto = document.createTextNode('\n'+typeof(valueOne)+'\n'+(typeof(valueTwo)));
+        divEjercicios.appendChild(texto);    
+        valueOne = true;
+        texto = document.createTextNode('\n'+typeof(valueOne));
+        divEjercicios.appendChild(texto); 
+    </script>
+
+    <script>
+        /*Ejercicio 3: Vamos a realizar una pequeña página que pida al usuario un
+        par de números y mediante una condicional le digamos si el primero es mayor que
+        el segundo o es menor o iguales. Es importante recordar que hemos de cambiar el
+        tipo de string a int usando la función parseInt();*/
+
+        divEjercicios.innerHTML += `
+            <h2>Ejercicio 3</h2>
+            <label for="number1">Primer número:</label>
+            <input type="text" id="number1" name="number1">
+            <label for="number2">Segundo número:</label>
+            <input type="text" id="number2" name="number2">
+            <button id="sendNumbers" type="button">Enviar</button>
+        `;
+
+        function calcularMayor(){
+            let result = 'El resultado del ejercicios 3 es: ';
+            var firstNum = document.getElementById("number1").value;
+            var secondNum = document.getElementById("number2").value;
+            var firstNumPInt = parseInt(firstNum);
+            var secondNumPInt = parseInt(secondNum);
+            if (firstNumPInt === secondNumPInt) {
+                result += 'Los valores son iguales';
+            } else {
+                result += (firstNumPInt > secondNumPInt) ? 'El primero es mayor' : 'El segundo es mayor';
+            }
+            removeAllChilds(divResult);
+            divResult.append(result);
+        }
+
+    </script>
+
+    <script>
+        /*Ejercicio 4: Veamos otro ejemplo sencillo que nos ilustra sobre el manejo del if.
+         Este script nos devuelve “hola” si no introducimos nada o aquello que hemos escrito.*/
+         divEjercicios.innerHTML += `
+            <h2>Ejercicio 4</h2>
+            <label for="texto">Indique un texto:</label>
+            <input type="text" id="texto" name="texto">
+            <button id="sendText" type="button">Enviar</button>
+        `;
+        function escribirFrase(){
+            result = 'Error';
+            var texto = document.getElementById("texto").value;
+            if (texto === '') {
+                result = 'hola';
+            } else {
+                result = texto;
+            }
+            removeAllChilds(divResult);
+            divResult.append(result);
+        }
+    
+        
+    </script>
+
+    <script>
+        /*Ejercicio 5: probar el siguiente programa*/
+        /* divEjercicios.innerHTML += `<h2>Ejercicio 5</h2>`;
+        var N1,N2;
+        N1=parseInt(prompt ("Primer número",""));
+        N2=parseInt(prompt ("Segundo número",""));
+        (N1>N2 ? document.write(N1 + " > " + N2):document.write(N2 + " > " + N1)); */
+    </script>
+
+    <script>
+        /*Ejercicio 6: hacer un bucle que escriba en una página web los encabezamientos
+         desde <H1> hasta <H6> con un texto que ponga "Encabezado de nivel x".*/
+        divEjercicios.innerHTML += `<h2>Ejercicio 6</h2>`;
+        for (let i = 1; i <= 6; i++){
+            divEjercicios.innerHTML += `<h${i}>Encabezado de nivel ${i}</h${i}>`;
+        }
+    </script>
+
+    <script>
+        /*Ejercicio 7: Veamos el mismo ejemplo anterior del bucle for, pero con un while.*/
+        divEjercicios.innerHTML += `<h2>Ejercicio 7</h2>`;
+        let i = 1;
+        do {
+            divEjercicios.innerHTML += `<h${i}>Encabezado de nivel ${i}</h${i}>`;
+            i++;
+        }while(i!=7);
+    </script>
+
+    <script>
+        /*Ejercicio 8: Realizar un programa que solicite al usuario un valor, y presente en
+        pantalla la cuenta atrás y luego la cuenta hacia delante. Hacerlo con un bucle for.*/
+        divEjercicios.innerHTML += `
+            <h2>Ejercicio 8</h2>
+            <label for="cuenta">Indique un número:</label>
+            <input type="number" id="cuenta" name="cuenta">
+            <button id="sendCount" type="button">Enviar</button>
+        `;
+      
+         function contador(){
+            let countNumber = document.getElementById('cuenta').value;
+            let resultCount = '';
+            removeAllChilds(divResult);
+            for (let j = 0; j <= countNumber; j++){
+                resultCount += j;
+            }
+            divResult.append(`${resultCount} | `);
+
+            resultCount = '';
+            for (let h = countNumber; h >= 0; h--){
+                resultCount += h;
+            }
+            divResult.append(`${resultCount}     `);
+        }
+       
+    </script>
+
+    <script>
+        /*Ejercicio 9: El mismo anterior pero con bucle while.*/ //TERMINAR
+        divEjercicios.innerHTML += `
+            <h2>Ejercicio 9</h2>
+            <label for="cuentaW">Indique un número:</label>
+            <input type="number" id="cuentaW" name="cuentaW">
+            <button id="sendCountW" type="button">Enviar</button>
+        `;
+      
+         function contadorW(){
+            let countNumber = document.getElementById('cuenta').value;
+            let resultCount = '';
+            removeAllChilds(divResult);
+            let k = 0;
+            while (k < countNumber) {
+                k++;
+                resultCount += k;
+            }
+            divResult.append(`${resultCount} | `);
+
+            resultCount = '';
+            let l = 0;
+            while (l < countNumber) {
+                l++;
+                resultCount += l;
+            }
+            divResult.append(`${resultCount}  `);
+            
+        }
+      
+
+    </script> 
+
+   <script>
+        /*Ejercicio 10: Hacer una Página web que genere una pirámide
+         de 1 a 50, formada de la siguiente forma:*/
+         divEjercicios.innerHTML += `<h2>Ejercicio 10</h2>`;
+         for (let j = 0; j <= 50; j++){
+             let actualIteration = '';
+             for (let h = 0; h < j; h++){
+                actualIteration += j;
+             }
+             divEjercicios.innerHTML += `<p>${actualIteration}</p`;
+         }
+    </script>
+
+    <script>
+        /*Ejercicio 11: Hacer una Página web que genere una pirámide 
+        de 1 a 50, formada de la siguiente forma:*/
+        divEjercicios.innerHTML += `<h2>Ejercicio 11</h2>`;
+        for (let j = 0; j <= 50; j++){
+            let actualIteration = '';
+            for (let h = 1; h <= j; h++){
+            actualIteration += h;
+            }
+            divEjercicios.innerHTML += `<p>${actualIteration}</p`;
+        }
+    </script>
+</body>
+</html>

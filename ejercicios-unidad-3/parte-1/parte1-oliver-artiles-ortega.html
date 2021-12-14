@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../img/icon.png"/>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style-parte1-ut3.css">
+    <title>Document</title>
+</head>
+<body>
+    <a href="../../index.html" class="menuPrincipal">Inicio</a>
+    <h1>Unidad 3, 1º Parte</h1>
+
+    <div>
+        <!--Ejercicio 1-->
+        <h2>Ejercicio 1</h2>
+        <div id="correccionOperacion"></div>
+        <button id="botonCalculoAritmetico">Resolver Operación</button>
+    </div>
+    
+
+    <div>
+        <h2>Ejercicio 2.1</h2>
+        <div id="incremento">
+            <script>document.write(incrementarNumero(12))</script>
+        </div>
+        <h2>Ejercicio 2.2</h2>
+        <div id="menorMayor">
+            <div id="resultadoSuma">
+                
+            </div>
+            <form>
+                <div>
+                    <label for="firstNum">Primer número:</label><br>
+                    <input type="number" id="firstNum" name="firstNum"><br>
+                </div>
+                <div>
+                    <label for="secondNum">Segundo número:</label><br>
+                    <input type="number" id="secondNum" name="secondNum">
+                </div>
+                <button type="button" id="comparar">Comparar</button>
+            </form>
+        </div>
+
+        <h2>Ejercicio 2.3</h2>
+        <button type="button" id="mostrarAntesDespues">Solicitar</button>
+
+        <h2>Ejercicio 3</h2>
+        <div>
+            <h3>for</h3>
+            <p>
+                Características: universalmente conocido, es muy rápido en performance, podemos utilizar
+                las propiedades nativas del 'for loop' (break, continue, etc.).
+            </p>
+            <ul id="resultadoFor"></ul>
+            <h3>forEach</h3>
+            <p>
+                Características: Nos permite una sintáxis mucho más limpia cuando tenemos que aplicar una 
+                 funcionalidad a cada valor del array.
+                 Posee un retorno implícito. 
+                 No permite utilizar continue y break.
+            </p>
+            <ul id="resultadoForEach"></ul>
+            <h3>for ... in</h3>
+            <p>
+                Características: La sintáxis es limpia, itera sobre todas las propiedades enumerables de 
+                un objeto.
+                Es una ventaja si quieres conocer el índice de la variable, el lado negativo es que 
+                para acceder a la variable del array necesitas indicar el índice y el array.
+                Permite utilizar en break y el continue.
+            </p>
+            <p>
+                Se ha añadido un número al array con =>  "frutas.numero = 10;".
+                Y como podemos ver el for ...in lo añade a la lista.
+
+            </p>
+            <ul id="resultadoForIn"></ul>
+            <h3>for ... of</h3>
+            <p>
+                Características: La diferencia con el for ...in es que no muestra los elementos que se agregan al prototipo, ni propiedades
+                extras que no estén en el array original.
+            </p>
+            <p>
+                Como podemos ver el número añadido anteriormente no aparece en la lista cuando
+                empleamos el for ...of
+            </p>
+            <ul id="resultadoForOf"></ul>
+        </div>
+    </div>
+
+</body>
+</html>

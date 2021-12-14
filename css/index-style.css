@@ -1,0 +1,43 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin:0;
+    border:0;
+}
+
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    max-width: 1024px;
+    background-color: #b8faff;
+}
+
+h1 {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    color: #093bdf;
+    font-family: Dindalove, serif;
+    font-size: 4em;
+}
+
+nav {
+    margin-top: 3rem;
+    background-color: #ffbb8e;
+    border-radius: 5px 5px;
+    padding: 1.5rem;
+}
+
+.btn-group ,a {
+    margin: 1rem;
+}
+
+
+@font-face {
+    font-family: Dindalove;
+    src: url(../font/Dindalove.ttf);
+}

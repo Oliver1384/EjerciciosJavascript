@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../img/icon.png"/>
+    <script type="text/javascript" src="./js/moneda.js"></script>
+    <script type="text/javascript" src="./js/piedra-papel-tijera.js"></script>
+    <script type="text/javascript" src="./js/manejo-funciones.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style-parte2-ut3.css">
+    <title>Unidad 3, parte 2</title>
+</head>
+<body>
+    <a href="../../index.html" class="menuPrincipal">Inicio</a>
+    <h1>Unidad 3, 2º Parte</h1>
+    <article class="juegoMoneda">
+        <div>
+            <h2>Moneda</h2>
+            <form>
+                <p>Escoje un lado de la moneda:</p>
+                <label for="monedaCara">Cara</label>
+                <input type="radio" id="monedaCara" name="monedaUsuario" value="cara" >
+                <label for="monedaCruz">Cruz</label>
+                <input type="radio" id="monedaCruz" name="monedaUsuario" value="cruz">
+                <button type="button" id="botonJuegoMoneda">Jugar</button>
+            </form>
+            <div id="resultadoJuegoMoneda"></div>
+        </div>
+
+        <div id="coin" class="provisional">
+            <div class="side-a"></div>
+            <div class="side-b"></div>
+        </div>
+    </article>
+
+    <article class="piedraPapelTijera">
+        <h2>Piedra, papel y tijera</h2>
+        <div>
+            <div>
+                <h3>Máquina</h3>
+                <img id="imgPiedraPapelTijera" src="./img/piedraPapelTijera/main.png"></img>
+            </div>
+            
+            <form class="piedraPapelTijeraBotones">
+                <h3>Humano</h3>
+                <label for="piedra">Piedra</label>
+                <input type="radio" id="piedra" name="piedraPapelTijera" value="piedra" >
+                <label for="papel">Papel</label>
+                <input type="radio" id="papel" name="piedraPapelTijera" value="papel">
+                <label for="tijera">Tijera</label>
+                <input type="radio" id="tijera" name="piedraPapelTijera" value="tijera">
+            </form>
+
+            <div>
+                <h2>Resultado</h2>
+                <div id="resultadoPiedraPapelTijera"></div>
+            </div>
+          
+            <div class="botonesPiedraPapelTijera">
+                <button id="botonPiedraPapelTijera">Jugar</button>
+                <button id="botonReinicioPiedraPapelTijera">Reiniciar</button>
+            </div>
+        </div>
+    </article>
+
+
+    <article class="manejoFunciones">
+        <!--Función A-->
+        <section>
+            <form>
+                <h2>Factorial</h2>
+                <p>Introduce 0 ò un número positivo</p>
+                <label for="numeroFactorial">Número</label>
+                <input id="numeroFactorial" name="numeroFactorial" type="number">
+                <p>Factorial</p>
+                <div id="resultadoFactorial"></div>
+                <button id="botonFactorial" type="button">Calcular factorial</button>
+            </form>
+        </section>
+ 
+        <!--Función B-->
+        <section>
+            <h2>Paso de parámetros por valor y por referencia</h2>
+            <p>Por referencia los argumentos tienen que ser objetos</p>
+            <form>
+                <label for="numeroUnoValorReferencia">Número 1</label>
+                <input id="numeroUnoValorReferencia" name="numeroUnoValorReferencia" type="number">
+                <label for="numeroDosValorReferencia">Número 2</label>
+                <input id="numeroDosValorReferencia" name="numeroDosValorReferencia" type="number">
+                <button type="button" id="intercambiarValor">Intercambiar por valor</button>
+                <button type="button" id="intercambiarReferencia">Intercambiar por referencia</button>
+            </form>
+        </section>
+
+        <!--Función C-->
+        <section>
+            <h2>Número de argumentos variables</h2>
+            <form>
+                <p>Introduzca los números que desea sumar separados por comas por ejemplo 3,45,25</p>
+                <label for="numerosArgumentosVariables">Números</label>
+                <input id="numerosArgumentosVariables" name="numerosArgumentosVariables" type="text">
+                <div id="resultadoSumaArgumentosVariables"></div>
+                <button type="button" id="botonSumar">Realizar la suma</button>
+            </form>
+        </section>
+
+        <!--Función D-->
+        <section>
+            <h2>Parámetros por defecto</h2>
+            <form>
+                <p>Pulse la opción deseada y observe los resultados</p>
+                <div id="informacionParametrosDefecto"></div>
+                <button type="button" id="tresParametros">Informacion('Pepe','Madrid',23.45)</button>
+                <button type="button" id="unParametroDefecto">Informacion('Pepe','Madrid')</button>
+                <button type="button" id="dosParametroDefecto">Informacion('Pepe')</button>
+            </form>
+        </section>
+
+        <!--Función E-->
+        <section>
+            <h2>Calcular factorial mediante función recursiva</h2>
+            <form>
+                <p>Introduce 0 ò un número positivo</p>
+                <label for="numeroFactorialRecursiva">Número</label>
+                <input id="numeroFactorialRecursiva" name="numeroFactorialRecursiva" type="number">
+                <p>Factorial</p>
+                <div id="resultadoFactorialRecursiva"></div>
+                <button id="botonFactorialRecursiva" type="button">Calcular factorial</button>
+            </form>
+        </section>
+    </article>
+</body>
+</html>
